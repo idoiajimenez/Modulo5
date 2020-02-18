@@ -1,0 +1,45 @@
+/* Includes necesarios para el funcionamiento de cmocka 
+CABECERAS PARA QUE MOCKA FUNCIONE
+*/
+# include <stddef.h>
+# include <setjmp.h>
+# include <stdarg.h>
+# include <cmocka.h>
+
+# include "../armstrong.h"
+
+/* tests */
+//EL NOMBRE DE TEST POR CONVENIO SE SUELE EMPEZAR POR TEST
+
+void test_is_armstrong_number_returns_true(void **state)
+{
+    (void) state; /* unused */
+    int ret;
+
+    ret = is_armstrong_number(6);
+    assert_int_equal(1, ret); //LO QUE ME DEVUELVE TIENE QUE SER UNO PORQUE 6 ES NUMERO DE ARMSTRONG
+
+    ret = is_armstrong_number(5);
+    assert_int_equal(1, ret); //LO QUE ME DEVUELVE TIENE QUE SER UNO PORQUE 6 ES NUMERO DE ARMSTRONG
+}
+
+void test_is_armstrong_number_returns_false(void **state)
+{
+    (void) state; /* unused */
+    int ret;
+
+    ret = is_armstrong_number(100);
+    assert_int_equal(0, ret);
+}
+
+//PARA LANZAR LOS TEST EN SI
+const struct CMUnitTest is_armstrong_number_tests[] = {
+    cmocka_unit_test(test_is_armstrong_number_returns_true),
+    cmocka_unit_test(test_is_armstrong_number_returns_false),
+};
+
+
+int main(void)
+{
+    return cmocka_run_group_tests(is_armstrong_number_tests, NULL, NULL);
+}

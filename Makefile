@@ -22,3 +22,6 @@ cppcheck:
 	cppcheck --enable=all --inconclusive *.c
 cppcheck-xml:
 	cppcheck --enable=all --inconclusive --xml --xml-version=2 *.c 2> cppcheck.xml
+test: armstrong.o stack.o
+	gcc test/is_armstrong_number.c armstrong.o stack.o -lm -lcmocka -o test/is_armstrong_number
+
