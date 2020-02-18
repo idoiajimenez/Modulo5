@@ -1,0 +1,7 @@
+
+/html/
+/latex/
+*.o
+/bin/
+/obj/
+

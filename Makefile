@@ -14,4 +14,6 @@ clean-bin:
 doc: clean-doc
 	doxygen
 cppcheck:
+	cppcheck --enable=all --inconclusive *.c
+cppcheck-xml:
 	cppcheck --enable=all --inconclusive --xml --xml-version=2 *.c 2> cppcheck.xml
