@@ -24,4 +24,7 @@ cppcheck-xml:
 	cppcheck --enable=all --inconclusive --xml --xml-version=2 *.c 2> cppcheck.xml
 test: armstrong.o stack.o
 	gcc test/is_armstrong_number.c armstrong.o stack.o -lm -lcmocka -o test/is_armstrong_number
+test-xml: armstrong.o stack.o
+	gcc test/is_armstrong_number.c armstrong.o stack.o -lm -lcmocka -o test/is_armstrong_number 
+	CMOCKA_XML_FILE=test/%g.xml CMOCKA_MESSAGE_OUTPUT=xml ./test/is_armstrong_number 
 
