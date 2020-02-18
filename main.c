@@ -1,13 +1,42 @@
-/* Programa que comprueba si un número es un número de Armstrong.*/
+/**
+* Programa que comprueba si un número es un número de Armstrong.
+*
+* @file
+*
+*/
 # include <stdio.h>
 # include <math.h>
+//! NUMERO MAX
 #define max 10
 
+//! NUEMRO DE ALGO
 int top=-1;
+//! NUEMRO DE ALGO
 int stack[max];
+
+/**
+* Saca el ultimo elemento del stack
+*/
 void push(int);
+
+/**
+* Añade elemento al stack
+*/
 int pop();
-int is_armstrong_number(int );
+
+/**
+* Verifica si un numero es de Amstrong o no
+*
+* @param a El numero que quieres comprobar
+*
+* @return int 0 si es amstrong o 1 si no lo es
+*
+*/
+ 
+int is_armstrong_number(int a);
+/**
+* la función principal
+*/
 
 void main(){   
 	int n;   
@@ -40,10 +69,12 @@ int is_armstrong_number(int numb){
 		return 0;
 }
 
+
 void push(int m){   
 	top++;   
 	stack[top]=m;
 }
+
 
 int pop(){   
 	int j;   
