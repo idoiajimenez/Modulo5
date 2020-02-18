@@ -9,7 +9,7 @@
 #define STACK_H
 //! NUMERO MAX
 #define max 10
-
+//! NUEMRO DE ALGO
 extern int top;
 
 //! NUEMRO DE ALGO
